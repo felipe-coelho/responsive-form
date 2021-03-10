@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Teste Frontend VAGAS.com</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="box">
+      <header class="header">
+        <div class="title">
+          Formulário<br />para compra de<br /><span>Pacote de Stickers</span>
+        </div>
+      </header>
+
+      <form class="form" novalidate>
+        <fieldset class="checkboxes">
+          <legend>Quais stickers:</legend>
+          <label>
+            <input type="checkbox" />
+            React
+          </label>
+
+          <label>
+            <input type="checkbox" />
+            Vue
+          </label>
+
+          <label>
+            <input type="checkbox" />
+            Angular
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Quantos stickers de cada?</legend>
+          <div data-counter class="counter">
+            <svg
+              data-minus-button
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              aria-controls="totalStickers"
+              aria-label="remove-sticker"
+              role="button"
+            >
+              <path
+                d="M4.667 0A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667zm28 23.333H9.333v-4.666h23.334v4.666z"
+              />
+            </svg>
+            <input
+              required
+              aria-required
+              id="totalStickers"
+              type="number"
+              placeholder="0"
+            />
+            <svg
+              data-plus-button
+              xmlns="http://www.w3.org/2000/svg"
+              width="42"
+              height="42"
+              aria-controls="totalStickers"
+              aria-label="add-sticker"
+              role="button"
+            >
+              <path
+                d="M4.667 42h32.666A4.668 4.668 0 0 0 42 37.333V4.667A4.668 4.668 0 0 0 37.333 0H4.667A4.668 4.668 0 0 0 0 4.667v32.666A4.668 4.668 0 0 0 4.667 42zm4.666-23.333h9.334V9.333h4.666v9.334h9.334v4.666h-9.334v9.334h-4.666v-9.334H9.333v-4.666z"
+              />
+            </svg>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <label for="descricao">Observações:</label>
+          <textarea
+            id="descricao"
+            name="descricao"
+            placeholder="Alguma dúvida? Recado?"
+          ></textarea>
+        </fieldset>
+
+        <footer>
+          <div id="validationMessages" aria-hidden="true" role="alert"></div>
+          <button type="button">Enviar</button>
+        </footer>
+      </form>
+    </div>
+
+    <script src="./dist/bundle.js"></script>
+  </body>
+</html>

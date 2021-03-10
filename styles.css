@@ -1,0 +1,220 @@
+@import url("https://rsms.me/inter/inter.css");
+:root {
+  --space-default: 16px;
+  --space-md: calc(var(--space-default) * 2);
+  --font-inter: "Inter", sans-serif;
+  --font-inter-var: "Inter var", sans-serif;
+  --red-error: #f33232;
+  --red-light-error: #f59393;
+  --green-ok: #00c57c;
+  --blue-hover: #191847;
+  --blue-dark: #071723;
+  --blue-default: #2f3676;
+}
+
+html {
+  font-family: var(--font-inter);
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: var(--font-inter-var);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rebeccapurple;
+  color: var(--blue-dark);
+}
+
+.box {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  overflow: hidden;
+  width: 550px;
+}
+
+label,
+legend {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: var(--space-default);
+}
+
+label[aria-invalid] {
+  color: var(--red-error);
+}
+
+.header {
+  background: url(images/header.png) center right no-repeat;
+  background-size: cover;
+  height: 187px;
+  padding: 23px 36px;
+  width: 100%;
+  margin-bottom: var(--space-default);
+}
+
+.header .title {
+  color: #fff;
+  font-size: 23px;
+  font-weight: 300;
+}
+
+.header .title span {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.46;
+}
+
+.form textarea {
+  background: #dde3e9;
+  border: 1px solid var(--blue-default);
+  border-radius: 8px;
+  color: var(--blue-dark);
+  height: 140px;
+  padding: 16px;
+  resize: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.form input[type="checkbox"] {
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background-color: var(--blue-default);
+  border-radius: 3px;
+  outline: none;
+}
+
+.form label[aria-invalid] input[type="checkbox"] {
+  background-color: var(--red-light-error);
+  border: 1px solid var(--red-error);
+}
+
+.form input[type="checkbox"]:hover {
+  background-color: var(--blue-hover);
+  cursor: pointer;
+}
+
+.form input[type="checkbox"]:checked::after {
+  content: "\2713";
+  font: 20px var(--font-inter-var);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+
+fieldset {
+  padding: 0 32px;
+  border: none;
+  margin-bottom: var(--space-md);
+}
+
+fieldset.checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter {
+  display: flex;
+}
+
+.counter svg {
+  fill: var(--blue-default);
+}
+
+.counter input[type="number"] {
+  background: #dde3e9;
+  border: 1px solid var(--blue-default);
+  border-radius: 7px;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 8px;
+  width: 60px;
+  text-align: center;
+  font-family: var(--font-inter-var);
+}
+
+.counter input[type="number"][aria-invalid] {
+  background-color: var(--red-light-error);
+  border: 1px solid var(--red-error);
+}
+
+.counter input[type="number"]::-webkit-inner-spin-button,
+.counter input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.counter svg:hover {
+  fill: var(--blue-hover);
+  cursor: pointer;
+}
+
+.counter svg[aria-disabled="true"] {
+  fill: #c5cfd6;
+  cursor: normal;
+}
+
+footer {
+  padding: 32px;
+  background: #dde3e9;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+footer button {
+  appearance: none;
+  background: var(--blue-default);
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 32px;
+  outline: none;
+}
+
+footer #validationMessages[aria-hidden="true"] {
+  display: none;
+}
+
+footer #validationMessages[aria-hidden="false"] {
+  display: block;
+  width: 100%;
+}
+
+footer #validationMessages.valid {
+  color: var(--green-ok);
+}
+
+footer #validationMessages.invalid {
+  color: var(--red-error);
+}
+
+footer button:focus,
+footer button:hover {
+  cursor: pointer;
+  background: var(--blue-hover);
+}
+
+@media screen and (max-width: 590px) {
+  .box {
+    width: calc(100vw - 40px);
+  }
+}
